@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示 - 迪力亚尔的个人博客</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        .works-content {
+            padding: 80px 0;
+        }
+        .works-intro {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .works-intro p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+        .music-section {
+            margin-bottom: 60px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .section-icon {
+            font-size: 2.5rem;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .album-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .album-cover {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+        }
+        .album-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .album-cover span {
+            position: relative;
+            z-index: 1;
+        }
+        .album-info {
+            padding: 25px;
+        }
+        .album-info h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .album-info .artist {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .album-info .description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .album-tracks {
+            padding: 0 25px 25px;
+        }
+        .track-list {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+        .track-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .track-item:last-child {
+            border-bottom: none;
+        }
+        .track-number {
+            width: 25px;
+            height: 25px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .track-name {
+            flex: 1;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .track-duration {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .creations-section {
+            background: var(--bg-white);
+            margin: 0 -20px;
+            padding: 60px 20px;
+        }
+        .creations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .creation-card {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .creation-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .creation-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .creation-content {
+            padding: 25px;
+        }
+        .creation-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .creation-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .creation-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .creation-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        .fitness-gallery {
+            margin-top: 60px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+        .gallery-item span {
+            font-size: 3rem;
+            color: white;
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 30px 20px 20px;
+            color: white;
+        }
+        .gallery-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .gallery-overlay p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .works-intro {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚽</span>
+                <span class="logo-text">迪力亚尔的个人博客</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="interests.html">兴趣爱好</a></li>
+                <li><a href="games.html">游戏战绩</a></li>
+                <li><a href="works.html" class="active">作品展示</a></li>
+                <li><a href="blog.html">博客文章</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>作品展示</h1>
+            <p>音乐专辑 · 创意作品 · 健身记录</p>
+        </div>
+    </header>
+
+    <main class="works-content">
+        <div class="container">
+            <div class="works-intro">
+                <h2 style="margin-bottom: 20px; color: var(--primary-color);">欢迎来到我的作品空间</h2>
+                <p>这里展示了我的音乐收藏、创意作品和健身成果。每一个作品都承载着我的热情和努力，希望能给你带来一些启发和快乐。</p>
+            </div>
+
+            <section class="music-section">
+                <div class="section-header">
+                    <div class="section-icon">🎵</div>
+                    <h2>音乐专辑</h2>
+                </div>
+                <div class="albums-grid">
+                    <div class="album-card">
+                        <div class="album-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <span>🎧</span>
+                        </div>
+                        <div class="album-info">
+                            <h3>我的跑步歌单</h3>
+                            <div class="artist">Various Artists</div>
+                            <div class="description">高能量电子音乐，适合高强度有氧训练，让我保持最佳状态。</div>
+                        </div>
+                        <div class="album-tracks">
+                            <div class="track-list">
+                                <div class="track-item">
+                                    <span class="track-number">1</span>
+                                    <span class="track-name">Blinding Lights</span>
+                                    <span class="track-duration">3:20</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="track-number">2</span>
+                                    <span class="track-name">Levitating</span>
+                                    <span class="track-duration">3:23</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="track-number">3</span>
+                                    <span class="track-name">Don't Start Now</span>
+                                    <span class="track-duration">3:01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span>🎸</span>
+                        </div>
+                        <div class="album-info">
+                            <h3>放松时听的歌</h3>
+                            <div class="artist">Various Artists</div>
+                            <div class="description">舒缓的旋律，帮助我在训练后放松身心，恢复精力。</div>
+                        </div>
+                        <div class="album-tracks">
+                            <div class="track-list">
+                                <div class="track-item">
+                                    <span class="track-number">1</span>
+                                    <span class="track-name">Watermelon Sugar</span>
+                                    <span class="track-duration">2:54</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="track-number">2</span>
+                                    <span class="track-name">Circles</span>
+                                    <span class="track-duration">3:35</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="track-number">3</span>
+                                    <span class="track-name">Night Changes</span>
+                                    <span class="track-duration">3:46</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <span>🎹</span>
+                        </div>
+                        <div class="album-info">
+                            <h3>游戏BGM精选</h3>
+                            <div class="artist">Various Artists</div>
+                            <div class="description">经典游戏配乐，在游戏时聆听，增强游戏沉浸感。</div>
+                        </div>
+                        <div class="album-tracks">
+                            <div class="track-list">
+                                <div class="track-item">
+                                    <span class="track-number">1</span>
+                                    <span class="track-name">CSGO Main Theme</span>
+                                    <span class="track-duration">2:45</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="track-number">2</span>
+                                    <span class="track-name">Valorant Theme</span>
+                                    <span class="track-duration">1:58</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="track-number">3</span>
+                                    <span class="track-name">LoL - Get Out</span>
+                                    <span class="track-duration">2:15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="creations-section">
+                <div class="section-header">
+                    <div class="section-icon">💡</div>
+                    <h2>创意作品</h2>
+                </div>
+                <div class="creations-grid">
+                    <div class="creation-card">
+                        <div class="creation-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                            📊
+                        </div>
+                        <div class="creation-content">
+                            <h3>个人数据看板</h3>
+                            <p>使用Excel和Python制作的个人数据可视化看板，记录健身数据、游戏数据和学习进度。</p>
+                            <div class="creation-tags">
+                                <span class="creation-tag">数据分析</span>
+                                <span class="creation-tag">可视化</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="creation-card">
+                        <div class="creation-image" style="background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);">
+                            🎬
+                        </div>
+                        <div class="creation-content">
+                            <h3>游戏精彩集锦</h3>
+                            <p>剪辑的CSGO和无畏契约精彩操作集锦，分享到B站后获得了不错的播放量。</p>
+                            <div class="creation-tags">
+                                <span class="creation-tag">视频剪辑</span>
+                                <span class="creation-tag">游戏</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="creation-card">
+                        <div class="creation-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            📝
+                        </div>
+                        <div class="creation-content">
+                            <h3>学习笔记库</h3>
+                            <p>整理的大学课程学习笔记，包括经济学、数学和计算机基础知识的详细笔记。</p>
+                            <div class="creation-tags">
+                                <span class="creation-tag">学习</span>
+                                <span class="creation-tag">笔记</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fitness-gallery">
+                <div class="section-header">
+                    <div class="section-icon">💪</div>
+                    <h2>健身记录</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <span>🏋️</span>
+                        <div class="gallery-overlay">
+                            <h4>深蹲突破120kg</h4>
+                            <p>2025年11月 新纪录</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <span>💪</span>
+                        <div class="gallery-overlay">
+                            <h4>卧推100kg达成</h4>
+                            <p>2025年10月 新的里程碑</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <span>🏃</span>
+                        <div class="gallery-overlay">
+                            <h4>10公里PB</h4>
+                            <p>2025年12月 48分钟</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <span>📈</span>
+                        <div class="gallery-overlay">
+                            <h4>体脂率降至15%</h4>
+                            <p>2025年全年健身成果</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <span>🥗</span>
+                        <div class="gallery-overlay">
+                            <h4>健康饮食计划</h4>
+                            <p>坚持健康饮食三个月</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <span>🏆</span>
+                        <div class="gallery-overlay">
+                            <h4>健身比赛参与</h4>
+                            <p>校内健身比赛获得前三</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我</h3>
+                    <p>一个热爱生活的大学生，喜欢健身、游戏和足球。在武汉理工大学经济学院学习，不断追求进步。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="interests.html">兴趣爱好</a></li>
+                        <li><a href="games.html">游戏战绩</a></li>
+                        <li><a href="blog.html">博客文章</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">B站</a>
+                        <a href="#" class="social-link">微博</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 迪力亚尔的个人博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

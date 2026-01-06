@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="fieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5a27"/>
+      <stop offset="100%" style="stop-color:#1e3d1a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1200" height="400" fill="url(#skyGradient)"/>
+  
+  <!-- Stars -->
+  <circle cx="100" cy="50" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="300" cy="80" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="500" cy="40" r="2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="700" cy="90" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="900" cy="60" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="1100" cy="45" r="1.5" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Stadium stands -->
+  <rect x="100" y="280" width="1000" height="120" fill="#3d3d3d"/>
+  <rect x="100" y="290" width="1000" height="20" fill="#4a4a4a"/>
+  <rect x="100" y="320" width="1000" height="15" fill="#3d3d3d"/>
+  <rect x="100" y="350" width="1000" height="20" fill="#4a4a4a"/>
+  
+  <!-- Stadium lights -->
+  <circle cx="150" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  <circle cx="300" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  <circle cx="450" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  <circle cx="600" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  <circle cx="750" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  <circle cx="900" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  <circle cx="1050" cy="250" r="15" fill="#fff5d4" opacity="0.9"/>
+  
+  <!-- Football field -->
+  <rect x="150" y="380" width="900" height="200" fill="url(#fieldGradient)"/>
+  
+  <!-- Field lines -->
+  <rect x="150" y="430" width="900" height="5" fill="#ffffff" opacity="0.8"/>
+  <rect x="150" y="530" width="900" height="5" fill="#ffffff" opacity="0.8"/>
+  
+  <!-- Center circle -->
+  <circle cx="600" cy="480" r="50" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Goal areas -->
+  <rect x="150" y="430" width="120" height="100" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+  <rect x="930" y="430" width="120" height="100" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Goals -->
+  <rect x="130" y="460" width="25" height="40" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <rect x="1045" y="460" width="25" height="40" fill="none" stroke="#ffffff" stroke-width="4"/>
+  
+  <!-- Net pattern -->
+  <path d="M135 465 L150 465 M135 475 L150 475 M135 485 L150 485 M135 495 L150 495" stroke="#888" stroke-width="1"/>
+  <path d="M135 465 L135 500 M140 465 L140 500 M145 465 L145 500" stroke="#888" stroke-width="1"/>
+  <path d="M1050 465 L1065 465 M1050 475 L1065 475 M1050 485 L1065 485 M1050 495 L1065 495" stroke="#888" stroke-width="1"/>
+  <path d="M1050 465 L1050 500 M1055 465 L1055 500 M1060 465 L1060 500 M1065 465 L1065 500" stroke="#888" stroke-width="1"/>
+  
+  <!-- Text -->
+  <text x="600" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#c9a962" font-weight="bold">⚽ 诺坎普球场</text>
+  <text x="600" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#a0a0a0">世界最大足球场之一</text>
+  
+  <!-- Decorative elements -->
+  <text x="200" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#c9a962">巴塞罗那</text>
+  <text x="1000" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#c9a962">FC BARCELONA</text>
+</svg>

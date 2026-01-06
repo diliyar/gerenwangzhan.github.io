@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客 - 摄影作品</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">迪力亚尔的个人博客</a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">首页</a></li>
+            <li><a href="interests.html" class="nav-link">兴趣爱好</a></li>
+            <li><a href="gallery.html" class="nav-link active">摄影作品</a></li>
+            <li><a href="admin/admin.html" class="nav-link">管理员</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="gallery-hero">
+        <div class="hero-bg"></div>
+        <div class="section-header">
+            <h2>我的<span>摄影作品</span></h2>
+            <p>用镜头捕捉生活的美好瞬间，记录光影交织的瞬间</p>
+        </div>
+        <div class="gallery-filter">
+            <button class="gallery-filter-btn active" data-filter="all">全部</button>
+            <button class="gallery-filter-btn" data-filter="landscape">风景</button>
+            <button class="gallery-filter-btn" data-filter="portrait">人像</button>
+            <button class="gallery-filter-btn" data-filter="street">街拍</button>
+            <button class="gallery-filter-btn" data-filter="architecture">建筑</button>
+        </div>
+        <button class="upload-btn" id="uploadBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            上传图片
+        </button>
+        <input type="file" id="imageUpload" accept="image/*" style="display:none;" multiple>
+        
+        <div class="upload-area" id="uploadArea" style="display: none;">
+            <div class="upload-area-header">
+                <h4>已选择 <span id="selectedCount">0</span> 张图片</h4>
+                <button class="btn-cancel" id="cancelUpload">取消</button>
+            </div>
+            <div class="preview-grid" id="previewGrid"></div>
+            <div class="upload-actions">
+                <button class="btn-primary" id="confirmUpload">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    确认上传
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="gallery-grid" style="max-width: 1600px; margin: 0 auto;">
+            <div class="gallery-item wide" data-category="landscape">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="日落风景">
+                <div class="gallery-overlay">
+                    <h4>金色日落</h4>
+                    <p>捕捉夕阳西下的温暖时刻</p>
+                    <span>📷</span>
+                </div>
+            </div>
+            <div class="gallery-item tall" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="人像摄影">
+                <div class="gallery-overlay">
+                    <h4>光影人像</h4>
+                    <p>捕捉人物的神韵与情感</p>
+                    <span>🎭</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="street">
+                <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80" alt="城市街拍">
+                <div class="gallery-overlay">
+                    <h4>城市脉络</h4>
+                    <p>记录城市的喧嚣与宁静</p>
+                    <span>🌆</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="architecture">
+                <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="建筑摄影">
+                <div class="gallery-overlay">
+                    <h4>建筑美学</h4>
+                    <p>线条与光影的艺术</p>
+                    <span>📐</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="landscape">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80" alt="自然风景">
+                <div class="gallery-overlay">
+                    <h4>森林深处</h4>
+                    <p>大自然的宁静与神秘</p>
+                    <span>🌳</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80" alt="微笑人像">
+                <div class="gallery-overlay">
+                    <h4>温暖微笑</h4>
+                    <p>记录最真挚的情感</p>
+                    <span>😊</span>
+                </div>
+            </div>
+            <div class="gallery-item wide" data-category="architecture">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80" alt="城市夜景">
+                <div class="gallery-overlay">
+                    <h4>都市之夜</h4>
+                    <p>灯光与建筑的完美融合</p>
+                    <span>🏙️</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="street">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="咖啡馆">
+                <div class="gallery-overlay">
+                    <h4>咖啡时光</h4>
+                    <p>街角的小确幸</p>
+                    <span>☕</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="landscape">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="海边日落">
+                <div class="gallery-overlay">
+                    <h4>海边时光</h4>
+                    <p>浪花与夕阳的邂逅</p>
+                    <span>🌊</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="时尚街拍">
+                <div class="gallery-overlay">
+                    <h4>潮流时尚</h4>
+                    <p>街头文化的魅力</p>
+                    <span>😎</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="street">
+                <img src="https://images.unsplash.com/photo-1444723121867-c61e74e36faa?w=800&q=80" alt="城市街景">
+                <div class="gallery-overlay">
+                    <h4>城市黄昏</h4>
+                    <p>华灯初上的街头</p>
+                    <span>🌇</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="architecture">
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80" alt="现代建筑">
+                <div class="gallery-overlay">
+                    <h4>现代建筑</h4>
+                    <p>简约之美的极致体现</p>
+                    <span>🏗️</span>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-nav">
+            <a href="#" class="page-link">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
+            <a href="#" class="page-link">4</a>
+            <span style="color: var(--text-muted); display: flex; align-items: center;">...</span>
+            <a href="#" class="page-link">8</a>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="section-header">
+            <h2>摄影<span>心得</span></h2>
+            <p>摄影不仅是一种记录，更是一种表达</p>
+        </div>
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div class="moment-card">
+                <h4>📸 观察与发现</h4>
+                <p>好的照片来自于对生活的细致观察。我喜欢在日常生活中寻找那些被忽视的美好，用镜头将它们永久保存。</p>
+            </div>
+            <div class="moment-card">
+                <h4>🎨 光影的艺术</h4>
+                <p>光影是摄影的灵魂。我热衷于捕捉不同光线下的世界，从晨曦到黄昏，从明到暗，每一刻都有独特的美。</p>
+            </div>
+            <div class="moment-card">
+                <h4>📖 讲述故事</h4>
+                <p>每一张照片都应该讲述一个故事。我追求的不是完美的技术，而是能够触动观众心灵的画面。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>个人博客</h3>
+                <p>记录生活，分享热爱。这里是我的个人空间，期待与你相遇。</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📧</a>
+                    <a href="#" class="social-link">📱</a>
+                    <a href="#" class="social-link">💬</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="interests.html">兴趣爱好</a></li>
+                    <li><a href="gallery.html">摄影作品</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>兴趣爱好</h4>
+                <ul class="footer-links">
+                    <li><a href="interests.html#football">足球</a></li>
+                    <li><a href="interests.html#fitness">健身</a></li>
+                    <li><a href="gallery.html">摄影</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 个人博客. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="lightbox">
+        <span class="lightbox-close">✕</span>
+        <img src="" alt="Lightbox Image">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

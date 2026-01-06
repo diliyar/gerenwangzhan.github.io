@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 迪力亚尔的个人博客</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        .about-content {
+            padding: 80px 0;
+        }
+        .timeline-section {
+            margin-bottom: 60px;
+        }
+        .timeline-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--border-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            top: 20px;
+        }
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+        .timeline-content {
+            background: var(--bg-white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .timeline-content .date {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .about-intro {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 60px;
+        }
+        .about-intro h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .about-intro p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 15px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .timeline-dot {
+                left: 10px !important;
+                right: auto !important;
+            }
+            .about-intro {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚽</span>
+                <span class="logo-text">迪力亚尔的个人博客</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html" class="active">关于我</a></li>
+                <li><a href="interests.html">兴趣爱好</a></li>
+                <li><a href="games.html">游戏战绩</a></li>
+                <li><a href="works.html">作品展示</a></li>
+                <li><a href="blog.html">博客文章</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>关于我</h1>
+            <p>从伊宁三中到武汉理工大学经济学院</p>
+        </div>
+    </header>
+
+    <main class="about-content">
+        <div class="container">
+            <section class="about-intro">
+                <h2>你好，我是迪力亚尔</h2>
+                <p>我是一个热爱生活、充满激情的在校大学生。目前在武汉理工大学经济学院学习，我对未来充满期待。</p>
+                <p>生活中，我是一个多才多艺的人。我热爱健身，享受每一次训练带来的成长和突破；我喜欢电子竞技，在CSGO和无畏契约中不断提升自己的技术和战术意识；我还是一个忠实的巴萨球迷，为球队的每一次胜利而欢呼。</p>
+                <div class="skills-grid">
+                    <div class="skill-tag">💪 健身爱好者</div>
+                    <div class="skill-tag">🎮 电竞玩家</div>
+                    <div class="skill-tag">⚽ 巴萨球迷</div>
+                    <div class="skill-tag">📚 经济学院学生</div>
+                </div>
+            </section>
+
+            <section class="timeline-section">
+                <h2>成长历程</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>伊宁市第三中学</h3>
+                            <div class="date">2018年 - 2021年</div>
+                            <p>初中三年在这里度过，这段时间培养了我对学习的兴趣和坚韧的品格。参加过多次数学竞赛和体育活动，为高中打下了坚实的基础。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>高中阶段</h3>
+                            <div class="date">2021年 - 2024年</div>
+                            <p>高中三年是我快速成长的时期。除了学业，我还开始接触健身和电子竞技，逐渐形成了自己的兴趣爱好体系。这段时间我学会了时间管理和自律。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>武汉理工大学经济学院</h3>
+                            <div class="date">2024年 - 至今</div>
+                            <p>成功考入武汉理工大学经济学院，开始了大学生活。在这里，我不仅专注于学业，还积极发展自己的兴趣爱好。参加了学校的电竞社和健身社团，结识了很多志同道合的朋友。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>未来规划</h3>
+                            <div class="date">2025年及以后</div>
+                            <p>继续深造经济学知识，同时不放弃对健身和游戏的热爱。希望能够在毕业后找到一份满意的工作，同时保持对生活的热情和追求。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我</h3>
+                    <p>一个热爱生活的大学生，喜欢健身、游戏和足球。在武汉理工大学经济学院学习，不断追求进步。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="interests.html">兴趣爱好</a></li>
+                        <li><a href="games.html">游戏战绩</a></li>
+                        <li><a href="blog.html">博客文章</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">B站</a>
+                        <a href="#" class="social-link">微博</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 迪力亚尔的个人博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

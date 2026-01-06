@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客 - 兴趣爱好</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">迪力亚尔的个人博客</a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">首页</a></li>
+            <li><a href="interests.html" class="nav-link active">兴趣爱好</a></li>
+            <li><a href="gallery.html" class="nav-link">摄影作品</a></li>
+            <li><a href="admin/admin.html" class="nav-link">管理员</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="interests-hero">
+        <div class="hero-bg"></div>
+        <div class="section-header">
+            <h2>我的<span>兴趣爱好</span></h2>
+            <p>足球点燃激情，健身塑造自我。这里记录着我生活中的两大热爱。</p>
+        </div>
+        <div class="interests-tabs">
+            <button class="interest-tab active" data-tab="football">⚽ 足球</button>
+            <button class="interest-tab" data-tab="fitness">💪 健身</button>
+            <button class="interest-tab" data-tab="gaming">🎮 游戏</button>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div id="football" class="interest-content active" style="display: block;">
+            <div class="football-grid" style="max-width: 1400px; margin: 0 auto;">
+                <div class="football-info">
+                    <div class="team-logo">🦁</div>
+                    <h3>巴塞罗那足球俱乐部</h3>
+                    <p>作为巴萨的忠实球迷，我已经被这支球队的魅力深深吸引多年。巴萨不仅代表着精湛的球技，更是一种足球哲学的体现——美丽足球、团队配合、攻势足球。</p>
+                    <p>我喜欢观看巴萨的比赛，分析球队的战术打法，感受梅西、哈维、伊涅斯塔等球星带来的视觉盛宴。巴萨的tiki-taka战术让我深深着迷，每一次精准的传球和跑位都是足球艺术的完美呈现。</p>
+                    <div class="stadium-featured">
+                        <img src="images/messi.jpg" alt="梅西" onerror="this.src='images/stadium.svg';">
+                        <div class="stadium-overlay">
+                            <h4>⚽ 莱昂内尔·梅西</h4>
+                            <p>足球史上最伟大的球员</p>
+                        </div>
+                    </div>
+                    <div class="favorite-moments">
+                        <div class="moment-card">
+                            <h4>🏆 六冠王伟业</h4>
+                            <p>2009年巴萨在瓜迪奥拉带领下完成六冠王壮举，创造足球史上的奇迹</p>
+                        </div>
+                        <div class="moment-card">
+                            <h4>⚽ 梅西巅峰</h4>
+                            <p>见证梅西的成长与辉煌，他用进球和助攻诠释了什么叫做足球天才</p>
+                        </div>
+                        <div class="moment-card">
+                            <h4>🎯 逆转巴黎</h4>
+                            <p>2017年欧冠惊天逆转大巴黎，诺坎普之夜永载史册</p>
+                        </div>
+                        <div class="moment-card">
+                            <h4>👑 哈白布时代</h4>
+                            <p>哈维、伊涅斯塔、布斯克茨组成的中场黄金一代，引领足球战术革新</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="football-visual">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div class="gallery-item" data-category="football">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' style='background: linear-gradient(135deg, %231a1a1a 25%25, %23222 25%25, %23222 50%25, %231a1a1a 50%25, %231a1a1a 75%25, %23222 75%25); background-size: 40px 40px;'%3E%3Ccircle cx='200' cy='150' r='80' fill='none' stroke='%23c9a962' stroke-width='3'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-size='50' fill='%23c9a962'%3E%F0%9F%98%80%3C/text%3E%3C/svg%3E" alt="足球">
+                            <div class="gallery-overlay">
+                                <h4>诺坎普球场</h4>
+                                <p>巴塞罗那主场</p>
+                                <span>⚽</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-category="football">
+                            <img src="images/barcelona-logo.jpg" alt="巴萨队徽" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27 style=%27background: linear-gradient(135deg, %23c9a962, %23a88952)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3E巴塞罗那队徽%3C/text%3E%3C/svg%3E'">
+                            <div class="gallery-overlay">
+                                <h4>巴萨队徽</h4>
+                                <p>加泰罗尼亚的骄傲</p>
+                                <span>🦁</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-category="football">
+                            <img src="images/messi.jpg" alt="梅西" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27 style=%27background: linear-gradient(135deg, %232c3e50, %231a1a1a)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3E梅西%3C/text%3E%3C/svg%3E'">
+                            <div class="gallery-overlay">
+                                <h4>梅西</h4>
+                                <p>足球史上最佳球员</p>
+                                <span>⭐</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-category="football">
+                            <img src="images/number10-jersey.jpg" alt="球衣" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27 style=%27background: linear-gradient(135deg, %23a88952, %232c3e50)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3E10号球衣%3C/text%3E%3C/svg%3E'">
+                            <div class="gallery-overlay">
+                                <h4>10号球衣</h4>
+                                <p>传奇的象征</p>
+                                <span>🎽</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fitness" class="interest-content">
+            <div class="fitness-content" style="max-width: 1400px; margin: 0 auto;">
+                <div class="fitness-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 50px;">
+                    <div class="gallery-item" data-category="fitness">
+                        <img src="images/workout.jpg" alt="健身训练" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 300%27 style=%27background: linear-gradient(135deg, %23c9a962, %232c3e50)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3E健身训练%3C/text%3E%3C/svg%3E'">
+                        <div class="gallery-overlay">
+                            <h4>力量训练</h4>
+                            <p>日常以力量训练为主</p>
+                            <span>🏋️</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="fitness">
+                        <img src="images/workout2.jpg" alt="有氧运动" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 300%27 style=%27background: linear-gradient(135deg, %232c3e50, %23c9a962)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3E有氧运动%3C/text%3E%3C/svg%3E'">
+                        <div class="gallery-overlay">
+                            <h4>有氧运动</h4>
+                            <p>保持运动节奏</p>
+                            <span>🏃</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fitness-schedule">
+                    <h3>📅 我的健身计划</h3>
+                    <div class="schedule-grid">
+                        <div class="schedule-item">
+                            <span class="day">周一</span>
+                            <span class="workout">胸部 + 三头肌</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">周二</span>
+                            <span class="workout">背部 + 二头肌</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">周三</span>
+                            <span class="workout">有氧 + 核心</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">周四</span>
+                            <span class="workout">腿部训练</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">周五</span>
+                            <span class="workout">肩膀 + 有氧</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">周六</span>
+                            <span class="workout">全身综合训练</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="day">周日</span>
+                            <span class="workout">休息日 + 拉伸</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fitness-stats">
+                    <div class="fitness-stat">
+                        <div class="value">5</div>
+                        <div class="label">年健身经验</div>
+                    </div>
+                    <div class="fitness-stat">
+                        <div class="value">6</div>
+                        <div class="label">每周训练天数</div>
+                    </div>
+                    <div class="fitness-stat">
+                        <div class="value">50+</div>
+                        <div class="label">累计训练次数</div>
+                    </div>
+                    <div class="fitness-stat">
+                        <div class="value">10</div>
+                        <div class="label">最常练习动作</div>
+                    </div>
+                </div>
+            </div>
+            <div style="max-width: 1400px; margin: 60px auto 0;">
+                <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 40px; color: var(--text-primary);">💪 训练重点</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+                    <div class="moment-card">
+                        <h4>🏋️ 力量训练</h4>
+                        <p>深蹲、硬拉、卧推三大项是我的训练核心，帮助我建立强大的基础力量。</p>
+                    </div>
+                    <div class="moment-card">
+                        <h4>🏃 有氧运动</h4>
+                        <p>跑步、游泳、骑行交替进行，提升心肺功能，保持体能状态。</p>
+                    </div>
+                    <div class="moment-card">
+                        <h4>🧘 柔韧性</h4>
+                        <p>拉伸和瑜伽帮助我提高柔韧性，预防运动损伤，提升训练效果。</p>
+                    </div>
+                    <div class="moment-card">
+                        <h4>🥗 饮食控制</h4>
+                        <p>高蛋白、低脂肪、适量碳水，科学饮食是健身成功的重要保障。</p>
+                    </div>
+                    <div class="moment-card">
+                        <h4>😴 充足睡眠</h4>
+                        <p>每晚7-8小时优质睡眠，让肌肉得到充分恢复和生长。</p>
+                    </div>
+                    <div class="moment-card">
+                        <h4>📈 持续进步</h4>
+                        <p>记录每次训练数据，定期评估调整训练计划，确保持续进步。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div id="gaming" class="interest-content">
+            <div class="gaming-hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('images/fengmian.jpg'); background-size: cover; background-position: center; padding: 80px 40px; text-align: center; border-radius: 16px; margin-bottom: 40px;">
+                <h3 style="font-size: 2.5rem; margin-bottom: 20px; color: #c9a962;">🎮 游戏世界</h3>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">偏好策略类游戏，偶尔和朋友开黑放松。在虚拟世界中，我享受思考的乐趣和团队协作的快感。</p>
+            </div>
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 40px; color: var(--text-primary);">🎯 热门游戏</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                    <div class="gallery-item" data-category="gaming">
+                        <img src="images/valorant.jpg" alt="Valorant" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 300%27 style=%27background: linear-gradient(135deg, %23ff4655, %231a1a1a)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3EValorant%3C/text%3E%3C/svg%3E'">
+                        <div class="gallery-overlay">
+                            <h4>Valorant</h4>
+                            <p> tactical shooter</p>
+                            <span>🎯</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="gaming">
+                        <img src="images/csgo.jpg" alt="CS:GO" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 300%27 style=%27background: linear-gradient(135deg, %23de9b35, %23a88952)%27%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%270.3em%27 font-size=%2730%27 fill=%27white%27%3ECS:GO%3C/text%3E%3C/svg%3E'">
+                        <div class="gallery-overlay">
+                            <h4>CS:GO</h4>
+                            <p>经典射击游戏</p>
+                            <span>🔫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="section-header">
+            <h2>运动与<span>生活</span></h2>
+            <p>足球和健身不仅是我的爱好，更是我生活方式的一部分</p>
+        </div>
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; align-items: center;">
+            <div style="text-align: center;">
+                <div style="font-size: 5rem; margin-bottom: 20px;">⚽ + 💪</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">双重热爱</h3>
+                <p style="color: var(--text-secondary); line-height: 1.9;">足球培养我的团队意识和战术思维，健身塑造我的意志力和身体素质。两者相辅相成，让我在生活中保持最佳状态。</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 5rem; margin-bottom: 20px;">🎯</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">目标驱动</h3>
+                <p style="color: var(--text-secondary); line-height: 1.9;">无论是观看一场精彩的比赛，还是完成一次高强度的训练，我都以目标为导向，不断追求卓越。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>个人博客</h3>
+                <p>记录生活，分享热爱。这里是我的个人空间，期待与你相遇。</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📧</a>
+                    <a href="#" class="social-link">📱</a>
+                    <a href="#" class="social-link">💬</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>快速导航</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="interests.html">兴趣爱好</a></li>
+                    <li><a href="gallery.html">摄影作品</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>兴趣爱好</h4>
+                <ul class="footer-links">
+                    <li><a href="interests.html#football">足球</a></li>
+                    <li><a href="interests.html#fitness">健身</a></li>
+                    <li><a href="gallery.html">摄影</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 个人博客. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="lightbox">
+        <span class="lightbox-close">✕</span>
+        <img src="" alt="Lightbox Image">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
